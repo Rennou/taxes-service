@@ -6,6 +6,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 
+/**
+ * 
+ * @author taous
+ *
+ */
 @SpringBootApplication
 @EnableSwagger2
 public class TaxesServiceApplication {
