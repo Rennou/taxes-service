@@ -19,7 +19,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableTransactionManagement
 public class JpaConfig {
-
+    //test modification apartir de projet taxe copie 
 	@Value("${spring.datasource.driver-class-name}")
 	String driver;
 
@@ -75,5 +75,9 @@ public class JpaConfig {
 		factoryBean.setJpaVendorAdapter(jpaVendorAdapter());
 		factoryBean.afterPropertiesSet();
 		return factoryBean.getNativeEntityManagerFactory();
+	}
+	
+	public void test() {
+		System.out.print("test");
 	}
 }
