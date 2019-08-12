@@ -19,7 +19,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableTransactionManagement
 public class JpaConfig {
-    //test modification apartir de projet taxe copie 
+    //test modification apartir de projet taxe
 	@Value("${spring.datasource.driver-class-name}")
 	String driver;
 
@@ -32,7 +32,7 @@ public class JpaConfig {
 	@Value("${spring.datasource.password}")
 	String password;
 
-
+    public void testo1() {}
 	@Bean
 	public DataSource dataSource() { 
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
