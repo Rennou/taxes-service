@@ -44,7 +44,7 @@ public class TaxeService {
 		tx.setTaxProv(new BigDecimal(t.getTaxProv()));
 		tx.setProvince(ProvinceService.getProvince(province));
 		try {
-		rep.saveTaxe(tx); 
+			rep.saveTaxe(tx); 
 
 		} catch (Exception  e) {
 			throw new  PersistentDataException("Enable to persist data :"+e.getMessage());
