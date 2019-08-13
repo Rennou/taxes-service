@@ -1,4 +1,4 @@
-package com.taxes.taxesservice;
+/*package com.taxes.taxesservice;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -64,7 +64,7 @@ public class TaxesServiceApplicationTests {
 		.andExpect(MockMvcResultMatchers.jsonPath("$.taxProv").value(5.0));
 	}
 
-	/*
+	
 	 * @Test public void getTaxetByProvinceAPI() throws Exception
 	 * 
 	 * {
@@ -78,6 +78,7 @@ public class TaxesServiceApplicationTests {
 	 * 
 	 * }
 	 * 
-	 */
+	 
 
 }
+*/
