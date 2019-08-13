@@ -1,16 +1,20 @@
-/*package com.taxes.taxesservice;
+package com.taxes.taxesservice;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.taxes.taxesservice.controller.TaxeController;
 import static org.mockito.Mockito.when;
@@ -46,6 +50,7 @@ public class TaxesServiceApplicationTests {
 	public void getTaxetByProvinceAPI() throws Exception
 
 	{
+
 		com.taxes.model.Taxe t = new com.taxes.model.Taxe();
 		t.setTaxFed(8.0);
 		t.setTaxProv(5.0);
@@ -55,30 +60,30 @@ public class TaxesServiceApplicationTests {
 		u.setCode("txprojet");
 		u.setPassword("tanis123");
 
-		when( jsonMapper.readValue(new ObjectMapper().writeValueAsString(u), User.class)).thenReturn(u);
+		 when( jsonMapper.readValue(new ObjectMapper().writeValueAsString(u), User.class)).thenReturn(u);
 		when(serviceU.getUsre("txprojet", "tanis123")).thenReturn(u);
 		mvc.perform(MockMvcRequestBuilders.get("/taxes/taxe/ON")
 				.header("securityHeader", new ObjectMapper().writeValueAsString(u))
 				.contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON)).andDo(print())
-		.andExpect(status().isOk()).andExpect(MockMvcResultMatchers.jsonPath("$.taxFed").value(8.0))
-		.andExpect(MockMvcResultMatchers.jsonPath("$.taxProv").value(5.0));
+				.andExpect(status().isOk()).andExpect(MockMvcResultMatchers.jsonPath("$.taxFed").value(8.0))
+				.andExpect(MockMvcResultMatchers.jsonPath("$.taxProv").value(5.0));
+
 	}
 
 	
-	 * @Test public void getTaxetByProvinceAPI() throws Exception
-	 * 
-	 * {
-	 * 
-	 * 
-	 * User u = new User(); u.setCode("txprojet"); u.setPassword("tanis123");
-	 * mvc.perform( MockMvcRequestBuilders .get("/taxes/test")
-	 * .header("securityHeader", new ObjectMapper().writeValueAsString(u))
-	 * .contentType(MediaType.APPLICATION_JSON) .accept(MediaType.APPLICATION_JSON))
-	 * .andDo(print()) .andExpect(status().isOk()) ;
-	 * 
-	 * }
-	 * 
+	/*  @Test public void getTaxetByProvinceAPI() throws Exception
+	  
+	  {
+	  
+	  
+	  User u = new User(); u.setCode("txprojet"); u.setPassword("tanis123");
+	  mvc.perform( MockMvcRequestBuilders .get("/taxes/test")
+	  .header("securityHeader", new ObjectMapper().writeValueAsString(u))
+	  .contentType(MediaType.APPLICATION_JSON) .accept(MediaType.APPLICATION_JSON))
+	  .andDo(print()) .andExpect(status().isOk()) ;
+	  
+	  }*/
+	  
 	 
 
 }
-*/
